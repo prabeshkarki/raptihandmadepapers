@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, Leaf, Recycle } from "lucide-react";
@@ -84,6 +83,91 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Process Overview Section */}
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-16 opacity-0 animate-fade-in">
+            Our Paper-Making Process
+          </h2>
+          
+          {/* Raw Materials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-gray-800">Raw Material Preparation</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our process begins with carefully selected raw materials. Each sheet starts its journey
+                as pure, sustainable fiber that undergoes meticulous processing to ensure the highest
+                quality paper products.
+              </p>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/lovable-uploads/e2cde796-7e30-4d84-a524-7ecdb4fd992d.png"
+                alt="Raw paper material preparation"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Processing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
+            <div className="order-2 md:order-1">
+              <img 
+                src="/lovable-uploads/1ed68aba-1fbd-47e6-9b44-977e392f160e.png"
+                alt="Paper processing stage"
+                className="rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="space-y-6 order-1 md:order-2">
+              <h3 className="text-2xl font-semibold text-gray-800">Processing & Refinement</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Through our advanced processing techniques, we transform raw materials into refined
+                pulp. This stage ensures consistent quality and the perfect texture for various paper
+                applications.
+              </p>
+            </div>
+          </div>
+
+          {/* Manufacturing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-gray-800">Manufacturing Excellence</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our state-of-the-art machinery and traditional craftsmanship combine to create
+                paper products that meet the highest industry standards while maintaining
+                environmental responsibility.
+              </p>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/lovable-uploads/11793218-ebe5-41d9-b122-76d263ead5bd.png"
+                alt="Paper manufacturing process"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Final Processing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <img 
+                src="/lovable-uploads/4eae614b-b4fb-4946-a974-b1adf491859e.png"
+                alt="Final paper processing"
+                className="rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="space-y-6 order-1 md:order-2">
+              <h3 className="text-2xl font-semibold text-gray-800">Final Processing & Quality Control</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Each batch undergoes rigorous quality control measures. Our final processing
+                ensures that every sheet of paper meets our exacting standards before reaching
+                our customers.
+              </p>
+            </div>
           </div>
         </div>
       </div>
