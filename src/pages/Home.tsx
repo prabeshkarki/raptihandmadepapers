@@ -15,7 +15,7 @@ const Home = () => {
     <div 
       className="min-h-screen bg-cover bg-center bg-no-repeat" 
       style={{ 
-        backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png')` 
+        backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png')` 
       }}
     >
       {/* Hero Section with Glass Effect */}
