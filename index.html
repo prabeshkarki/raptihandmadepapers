@@ -16,6 +16,26 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script>
+      // Check if we've been redirected from 404.html
+      (function() {
+        var redirect = window.location.search.match(/[?&]path=([^&]*)/);
+        var hash = window.location.search.match(/[?&]hash=([^&]*)/);
+        
+        if (redirect) {
+          var path = decodeURIComponent(redirect[1]);
+          var newPath = window.location.origin + 
+            window.location.pathname.replace(/\/[^\/]*$/, '/') + 
+            '#' + path.replace(/^\//, '');
+          
+          if (hash) {
+            newPath += decodeURIComponent(hash[1]);
+          }
+          
+          window.history.replaceState(null, null, newPath);
+        }
+      })();
+    </script>
   </head>
 
   <body>
