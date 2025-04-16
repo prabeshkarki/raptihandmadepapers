@@ -12,14 +12,14 @@ import {
 
 const Home = () => {
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center bg-no-repeat" 
-      style={{ 
-        backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png')` 
-      }}
-    >
+    <div>
       {/* Hero Section with Glass Effect */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div 
+        className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png')` 
+        }}
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-green-50/30 to-blue-50/30 backdrop-blur-sm" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 animate-fade-in">
