@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import GoogleMap from "@/components/GoogleMap";
 
 const Contact = () => {
   return (
@@ -16,6 +17,11 @@ const Contact = () => {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto opacity-0 animate-fade-in animation-delay-300">
             Have questions about our products or services? We'd love to hear from you.
           </p>
+        </div>
+        
+        {/* Google Map */}
+        <div className="w-full h-96 mb-16 opacity-0 animate-fade-in animation-delay-400">
+          <GoogleMap latitude={27.854901970945086} longitude={82.6725602728273} zoom={15} />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
