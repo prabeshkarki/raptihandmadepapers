@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Leaf, Recycle } from "lucide-react";
+import { ArrowRight, Sparkles, Leaf, Recycle, Users, MapPin } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -42,7 +43,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent opacity-0 animate-fade-in">
-              Why Choose PaperCraft?
+              Why Choose RAPTIHANDMADE?
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -87,87 +88,101 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Process Overview Section */}
+      {/* About Preview Section */}
       <div className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-16 opacity-0 animate-fade-in">
-            Our Paper-Making Process
-          </h2>
-          
-          {/* Raw Materials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-gray-800">Raw Material Preparation</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our process begins with carefully selected raw materials. Each sheet starts its journey
-                as pure, sustainable fiber that undergoes meticulous processing to ensure the highest
-                quality paper products.
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                Our Heritage
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                At RAPTIHANDMADE, we preserve the centuries-old tradition of Nepali handmade paper. 
+                Our skilled artisans craft each sheet using sustainable lokta bark, following 
+                time-honored techniques passed down through generations.
               </p>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                Every product tells a story of Nepalese culture, craftsmanship, and our commitment to 
+                environmental sustainability.
+              </p>
+              <Link
+                to="/about"
+                className="inline-flex items-center text-green-600 hover:text-green-800 font-medium"
+              >
+                Learn more about our story
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="/lovable-uploads/e2cde796-7e30-4d84-a524-7ecdb4fd992d.png"
-                alt="Raw paper material preparation"
+                src="/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+                alt="Traditional Nepali Kagaj Making"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Processing */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
-            <div className="order-2 md:order-1">
-              <img 
-                src="/lovable-uploads/1ed68aba-1fbd-47e6-9b44-977e392f160e.png"
-                alt="Paper processing stage"
-                className="rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="space-y-6 order-1 md:order-2">
-              <h3 className="text-2xl font-semibold text-gray-800">Processing & Refinement</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Through our advanced processing techniques, we transform raw materials into refined
-                pulp. This stage ensures consistent quality and the perfect texture for various paper
-                applications.
-              </p>
-            </div>
+      {/* Contact Preview Section */}
+      <div className="py-24 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">
+              Get In Touch
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Have questions about our products or interested in learning more about our 
+              traditional papermaking process? We'd love to hear from you.
+            </p>
           </div>
 
-          {/* Manufacturing */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-gray-800">Manufacturing Excellence</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our state-of-the-art machinery and traditional craftsmanship combine to create
-                paper products that meet the highest industry standards while maintaining
-                environmental responsibility.
-              </p>
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-              <img 
-                src="/lovable-uploads/11793218-ebe5-41d9-b122-76d263ead5bd.png"
-                alt="Paper manufacturing process"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Final Processing */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <img 
-                src="/lovable-uploads/4eae614b-b4fb-4946-a974-b1adf491859e.png"
-                alt="Final paper processing"
-                className="rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="space-y-6 order-1 md:order-2">
-              <h3 className="text-2xl font-semibold text-gray-800">Final Processing & Quality Control</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Each batch undergoes rigorous quality control measures. Our final processing
-                ensures that every sheet of paper meets our exacting standards before reaching
-                our customers.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: MapPin,
+                title: "Visit Our Workshop",
+                content: "123 Craft Street, Kathmandu, Nepal"
+              },
+              {
+                icon: Users,
+                title: "Meet Our Artisans",
+                content: "Schedule a tour of our facilities"
+              },
+              {
+                icon: ArrowRight,
+                title: "Contact Us",
+                content: "Get in touch for custom orders",
+                isLink: true
+              }
+            ].map((item, index) => (
+              <Card
+                key={item.title}
+                className="text-center backdrop-blur-sm bg-white/70 border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <CardHeader>
+                  <div className="mx-auto h-12 w-12 rounded-full bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center mb-4">
+                    <item.icon className="h-6 w-6 text-green-600" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                    {item.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600">
+                    {item.content}
+                  </CardDescription>
+                  {item.isLink && (
+                    <Link
+                      to="/contact"
+                      className="mt-4 inline-block text-green-600 hover:text-green-800 font-medium"
+                    >
+                      Contact us now
+                    </Link>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
