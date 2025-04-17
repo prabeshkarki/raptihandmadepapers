@@ -19,11 +19,6 @@ const Contact = () => {
           </p>
         </div>
         
-        {/* Google Map */}
-        <div className="w-full h-96 mb-16 opacity-0 animate-fade-in animation-delay-400">
-          <GoogleMap latitude={27.854901970945086} longitude={82.6725602728273} zoom={15} />
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8 opacity-0 animate-fade-in animation-delay-500">
             {[
@@ -61,7 +56,17 @@ const Contact = () => {
             ))}
           </div>
           
-          <Card className="glass p-8 opacity-0 animate-fade-in animation-delay-700">
+          {/* Google Map - Now positioned between Email Us and Send us a Message */}
+          <div className="w-full h-96 mb-8 opacity-0 animate-fade-in animation-delay-600">
+            <GoogleMap 
+              latitude={27.854510666767304} 
+              longitude={82.67260432691184} 
+              zoom={15} 
+              mapType="satellite"
+            />
+          </div>
+          
+          <Card className="glass p-8 opacity-0 animate-fade-in animation-delay-700 lg:col-start-2">
             <h2 className="text-2xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">
               Send us a Message
             </h2>

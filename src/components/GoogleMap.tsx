@@ -5,9 +5,15 @@ interface GoogleMapProps {
   latitude: number;
   longitude: number;
   zoom?: number;
+  mapType?: 'roadmap' | 'satellite' | 'hybrid' | 'terrain';
 }
 
-const GoogleMap: React.FC<GoogleMapProps> = ({ latitude, longitude, zoom = 14 }) => {
+const GoogleMap: React.FC<GoogleMapProps> = ({ 
+  latitude, 
+  longitude, 
+  zoom = 14,
+  mapType = 'roadmap' 
+}) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,7 +26,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ latitude, longitude, zoom = 14 })
     iframe.style.border = '0';
     iframe.allowFullscreen = true;
     iframe.referrerPolicy = 'no-referrer-when-downgrade';
-    iframe.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${latitude},${longitude}&zoom=${zoom}`;
+    iframe.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${latitude},${longitude}&zoom=${zoom}&maptype=${mapType}`;
 
     // Clear the map container and append the iframe
     if (mapRef.current.firstChild) {
@@ -33,7 +39,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ latitude, longitude, zoom = 14 })
         mapRef.current.removeChild(mapRef.current.firstChild);
       }
     };
-  }, [latitude, longitude, zoom]);
+  }, [latitude, longitude, zoom, mapType]);
 
   return (
     <div ref={mapRef} className="w-full h-full rounded-lg overflow-hidden shadow-md"></div>
