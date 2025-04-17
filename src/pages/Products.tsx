@@ -1,82 +1,202 @@
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Package2, ArrowRight, Star } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Package2, ArrowRight, Send, PenLine } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const products = [
+// Product data organized by categories
+const productCategories = [
   {
-    id: 1,
-    name: "Premium Writing Paper",
-    description: "Smooth, high-quality paper perfect for writing and printing",
-    weight: "80gsm",
-    size: "A4",
+    id: "writing-paper",
+    title: "Writing Paper",
+    products: [
+      {
+        id: 1,
+        name: "Handmade Lokta Paper",
+        description: "Premium textured writing paper made from sustainable lokta fiber",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      },
+      {
+        id: 2,
+        name: "Premium Letter Set",
+        description: "Elegant stationery set with matching envelopes",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      },
+      {
+        id: 3,
+        name: "Himalayan Fiber A4",
+        description: "Durable writing sheets with natural Himalayan fiber inclusions",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      }
+    ]
   },
   {
-    id: 2,
-    name: "Kraft Paper",
-    description: "Durable brown paper ideal for packaging and crafts",
-    weight: "120gsm",
-    size: "Various",
+    id: "notebooks",
+    title: "Notebooks",
+    products: [
+      {
+        id: 4,
+        name: "Handbound Journal",
+        description: "Traditional Nepali binding with 100% lokta paper pages",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      },
+      {
+        id: 5,
+        name: "Pocket Notebook",
+        description: "Small-format notebook with durable handmade cover",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      },
+      {
+        id: 6,
+        name: "Artist Sketchbook",
+        description: "Thick textured pages perfect for sketching and watercolor",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      }
+    ]
   },
   {
-    id: 3,
-    name: "Art Paper",
-    description: "Textured paper designed for artistic applications",
-    weight: "200gsm",
-    size: "A3",
+    id: "envelopes",
+    title: "Envelopes",
+    products: [
+      {
+        id: 7,
+        name: "Decorative Envelopes",
+        description: "Hand-decorated envelopes with traditional Nepali motifs",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      },
+      {
+        id: 8,
+        name: "Business Envelopes",
+        description: "Professional-grade handmade envelopes for business correspondence",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      }
+    ]
   },
   {
-    id: 4,
-    name: "Recycled Office Paper",
-    description: "Eco-friendly paper perfect for everyday use",
-    weight: "75gsm",
-    size: "A4",
+    id: "gift-wrap",
+    title: "Gift Wrap",
+    products: [
+      {
+        id: 9,
+        name: "Printed Gift Paper",
+        description: "Handprinted wrapping paper with botanical designs",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      },
+      {
+        id: 10,
+        name: "Luxury Gift Bags",
+        description: "Handcrafted paper gift bags with cotton handles",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      }
+    ]
   },
+  {
+    id: "custom",
+    title: "Custom",
+    products: [
+      {
+        id: 11,
+        name: "Wedding Stationery",
+        description: "Custom invitations and stationery for your special day",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      },
+      {
+        id: 12,
+        name: "Corporate Branding",
+        description: "Custom paper products featuring your company logo",
+        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
+      }
+    ]
+  }
 ];
 
 const Products = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 animate-fade-in">
+      {/* Header */}
+      <div className="pt-32 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 animate-fade-in">
             Our Premium Paper Products
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 opacity-0 animate-fade-in animation-delay-300">
-            Discover our range of high-quality paper solutions crafted with precision and care.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto text-center mb-8 opacity-0 animate-fade-in animation-delay-300">
+            Discover our range of handcrafted Nepali paper products made using traditional techniques and sustainable materials.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product, index) => (
-            <Card 
-              key={product.id} 
-              className="group glass hover:shadow-xl transition-all duration-300 hover:-translate-y-1 opacity-0 animate-fade-in overflow-hidden"
-              style={{ animationDelay: `${(index + 1) * 200}ms` }}
-            >
-              <div className="p-6">
-                <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Package2 className="h-6 w-6 text-green-600" />
+      </div>
+
+      {/* Product Categories */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        {productCategories.map((category, categoryIndex) => (
+          <div key={category.id} className="mb-20">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-8 opacity-0 animate-fade-in"
+                style={{ animationDelay: `${categoryIndex * 100}ms` }}>
+              {category.title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {category.products.map((product, productIndex) => (
+                <Card 
+                  key={product.id} 
+                  className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 opacity-0 animate-fade-in bg-white/90"
+                  style={{ animationDelay: `${(categoryIndex * 100) + (productIndex * 100)}ms` }}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                      {product.name}
+                    </h3>
+                    <p className="text-gray-600 mb-5 text-sm">{product.description}</p>
+                    <Button className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700">
+                      Inquire
+                      <Send className="h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Custom Orders CTA */}
+      <div className="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 lg:p-12 shadow-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="h-16 w-16 rounded-xl bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center mb-6">
+                  <PenLine className="h-8 w-8 text-green-600" />
                 </div>
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <div className="text-sm text-gray-500 space-y-1 mb-6">
-                  <p className="flex items-center gap-2">
-                    <Star className="h-4 w-4" /> Weight: {product.weight}
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Star className="h-4 w-4" /> Size: {product.size}
-                  </p>
-                </div>
-                <Button className="w-full group-hover:bg-green-600 transition-colors duration-300 flex items-center justify-center gap-2">
-                  Request Sample
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
+                <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  Custom Orders
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Looking for something unique? We specialize in custom paper products tailored to your specific needs.
+                  From corporate stationery to wedding invitations, our artisans can create bespoke paper solutions that
+                  reflect your vision and values.
+                </p>
+                <Link to="/contact">
+                  <Button className="flex items-center gap-2 text-lg px-6 py-6 h-auto bg-green-600 hover:bg-green-700">
+                    Request a Custom Order
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </Link>
               </div>
-            </Card>
-          ))}
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png" 
+                  alt="Custom Paper Products" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

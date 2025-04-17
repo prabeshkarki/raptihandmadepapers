@@ -1,4 +1,3 @@
-
 import { Clock, Users, Rocket, Leaf, Award, Globe } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -99,11 +98,11 @@ const About = () => {
         </div>
       </div>
 
-      {/* Meet the Leaders Section */}
+      {/* Meet the Team Section */}
       <div className="py-24 bg-white/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-16">
-            Meet Our Leaders
+            Meet Our Team
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
@@ -125,23 +124,23 @@ const About = () => {
                 bio: "Passionate about environmental conservation, Amrita ensures our processes remain eco-friendly and sustainable.",
                 image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&h=400&auto=format&fit=crop"
               }
-            ].map((leader, index) => (
+            ].map((member, index) => (
               <div 
-                key={leader.name}
+                key={member.name}
                 className="glass p-6 rounded-xl text-center opacity-0 animate-fade-in hover:shadow-lg transition-all duration-300"
                 style={{ animationDelay: `${(index + 1) * 200}ms` }}
               >
                 <div className="mb-6 flex justify-center">
                   <Avatar className="h-32 w-32 border-4 border-white shadow-md">
-                    <AvatarImage src={leader.image} alt={leader.name} />
-                    <AvatarFallback>{leader.name.substring(0, 2)}</AvatarFallback>
+                    <AvatarImage src={member.image} alt={member.name} />
+                    <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
                   </Avatar>
                 </div>
                 <h3 className="text-xl font-semibold mb-1 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                  {leader.name}
+                  {member.name}
                 </h3>
-                <p className="text-sm text-green-700 font-medium mb-4">{leader.role}</p>
-                <p className="text-gray-600">{leader.bio}</p>
+                <p className="text-sm text-green-700 font-medium mb-4">{member.role}</p>
+                <p className="text-gray-600">{member.bio}</p>
               </div>
             ))}
           </div>
