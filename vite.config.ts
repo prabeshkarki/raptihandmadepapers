@@ -13,28 +13,8 @@ export default defineConfig(({ mode }) => ({
   base: './', // Ensure base path is set for GitHub Pages
   plugins: [
     react({
-      // Add SWC options for better security
-      swcOptions: {
-        jsc: {
-          target: "es2020",
-          parser: {
-            syntax: "typescript",
-            tsx: true,
-            // Avoid generating inefficient regex patterns
-            regExpLiterals: true,
-          },
-          transform: {
-            optimizer: {
-              globals: {
-                vars: {
-                  // Avoid unsafe regex optimizations
-                  __UNSAFE_REGEX__: "false",
-                },
-              },
-            },
-          },
-        },
-      },
+      // Using standard SWC options
+      plugins: [],
     }),
     mode === 'development' &&
     componentTagger(),
@@ -44,9 +24,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Add security headers
+  // Add security settings for build
   build: {
-    // Apply terser optimizations to prevent regex DoS
+    // Apply terser optimizations
     minify: 'terser',
     terserOptions: {
       compress: {

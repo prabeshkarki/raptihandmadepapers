@@ -17,13 +17,13 @@
       
       var hash = window.location.hash;
       
-      // Create path to index.html
+      // Create path to index.html with the path as a hash route
       var redirectPath = window.location.origin + 
         (repoName ? repoName : '') + 
-        '/index.html?path=' + encodeURIComponent(path) + 
-        (hash ? '&hash=' + encodeURIComponent(hash) : '');
+        '/#' + path.substr(1) + 
+        (hash ? hash : '');
       
-      // Redirect to index.html with the path as a query parameter
+      // Redirect to the hash route
       window.location.href = redirectPath;
     </script>
   </head>
