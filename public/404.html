@@ -5,17 +5,29 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // Get the current path and hash from the URL
+      // Get the current path excluding the repository name if deployed to GitHub Pages
       var path = window.location.pathname;
+      var repoName = window.location.hostname.includes('github.io') ? 
+        '/' + window.location.pathname.split('/')[1] : '';
+      
+      // If on GitHub Pages, adjust the path to exclude the repo name
+      if (repoName && path.startsWith(repoName)) {
+        path = path.substring(repoName.length);
+      }
+      
       var hash = window.location.hash;
       
-      // Redirect to the index.html with the path as a query parameter
-      window.location.href = '/index.html?path=' + 
-        encodeURIComponent(path) + 
+      // Create path to index.html
+      var redirectPath = window.location.origin + 
+        (repoName ? repoName : '') + 
+        '/index.html?path=' + encodeURIComponent(path) + 
         (hash ? '&hash=' + encodeURIComponent(hash) : '');
+      
+      // Redirect to index.html with the path as a query parameter
+      window.location.href = redirectPath;
     </script>
   </head>
   <body>
-    <p>Redirecting...</p>
+    <p>Redirecting to home page...</p>
   </body>
 </html>
