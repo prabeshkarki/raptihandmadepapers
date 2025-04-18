@@ -1,34 +1,12 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import GoogleMap from "@/components/GoogleMap";
 
 const Contact = () => {
-  const socialLinks = [
-    { 
-      icon: Facebook, 
-      name: "Facebook", 
-      url: "https://www.facebook.com/papercraft" 
-    },
-    { 
-      icon: Instagram, 
-      name: "Instagram", 
-      url: "https://www.instagram.com/papercraft" 
-    },
-    { 
-      icon: Twitter, 
-      name: "TikTok", 
-      url: "https://www.tiktok.com/@papercraft" 
-    },
-    { 
-      icon: Youtube, 
-      name: "WhatsApp", 
-      url: "https://wa.me/+15551234567" 
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 pt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,21 +90,6 @@ const Contact = () => {
               </Button>
             </form>
           </Card>
-        </div>
-        
-        <div className="mt-12 flex justify-center space-x-6">
-          {socialLinks.map((social) => (
-            <a 
-              key={social.name} 
-              href={social.url} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              <social.icon className="h-8 w-8" />
-              <span className="sr-only">{social.name}</span>
-            </a>
-          ))}
         </div>
       </div>
     </div>
