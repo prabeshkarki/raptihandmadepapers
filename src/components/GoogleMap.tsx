@@ -1,48 +1,25 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 interface GoogleMapProps {
-  latitude: number;
-  longitude: number;
+  latitude?: number;
+  longitude?: number;
   zoom?: number;
   mapType?: 'roadmap' | 'satellite' | 'hybrid' | 'terrain';
 }
 
-const GoogleMap: React.FC<GoogleMapProps> = ({ 
-  latitude, 
-  longitude, 
-  zoom = 14,
-  mapType = 'roadmap' 
-}) => {
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!mapRef.current) return;
-
-    // Create the iframe with the Google Maps embed
-    const iframe = document.createElement('iframe');
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.style.border = '0';
-    iframe.allowFullscreen = true;
-    iframe.referrerPolicy = 'no-referrer-when-downgrade';
-    iframe.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${latitude},${longitude}&zoom=${zoom}&maptype=${mapType}`;
-
-    // Clear the map container and append the iframe
-    if (mapRef.current.firstChild) {
-      mapRef.current.removeChild(mapRef.current.firstChild);
-    }
-    mapRef.current.appendChild(iframe);
-
-    return () => {
-      if (mapRef.current?.firstChild) {
-        mapRef.current.removeChild(mapRef.current.firstChild);
-      }
-    };
-  }, [latitude, longitude, zoom, mapType]);
-
+const GoogleMap: React.FC<GoogleMapProps> = () => {
   return (
-    <div ref={mapRef} className="w-full h-full rounded-lg overflow-hidden shadow-md"></div>
+    <div className="w-full h-full rounded-lg overflow-hidden shadow-md">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14110.185782845942!2d82.6664691111117!3d27.854479694949006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3997a5133dc4307b%3A0x86332014cb2840fb!2sRAPTI%20PAPER%20%26%20HAND%20CRAFT!5e0!3m2!1sen!2snp!4v1745039017541!5m2!1sen!2snp"
+        className="w-full h-full"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
   );
 };
 
