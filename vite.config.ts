@@ -30,8 +30,8 @@ export default defineConfig(({ mode }) => ({
     minify: 'terser',
     terserOptions: {
       compress: {
-        // Help prevent regex DoS
-        unsafe_regex: false,
+        drop_console: true,
+        drop_debugger: true,
       },
     },
   },
