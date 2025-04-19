@@ -18,6 +18,8 @@ const GoogleMap: React.FC<GoogleMapProps> = () => {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        title="Rapti Handmade Papers - Visit Our Workshop in Nepal"
+        aria-label="Google Maps showing Rapti Paper & Hand Craft location in Nepal"
       />
     </div>
   );
