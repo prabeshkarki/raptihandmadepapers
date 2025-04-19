@@ -8,19 +8,19 @@ import GoogleMap from "@/components/GoogleMap";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 pt-32">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 pt-20 sm:pt-28 md:pt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 animate-fade-in">
+        <div className="text-center mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4 sm:mb-6 animate-fade-in">
             Get in Touch
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto opacity-0 animate-fade-in animation-delay-300">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto opacity-0 animate-fade-in animation-delay-300">
             Have questions about our products or services? We'd love to hear from you.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-8 opacity-0 animate-fade-in animation-delay-500">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="space-y-6 md:space-y-8 opacity-0 animate-fade-in animation-delay-500">
             {[
               {
                 icon: MapPin,
@@ -38,17 +38,17 @@ const Contact = () => {
                 content: ["contact@papercraft.com"]
               }
             ].map((item, index) => (
-              <Card key={item.title} className="glass p-6 hover:shadow-lg transition-all duration-300">
+              <Card key={item.title} className="glass p-4 sm:p-6 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-start">
-                  <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-green-600" />
+                  <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
+                    <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                    <h3 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                       {item.title}
                     </h3>
                     {item.content.map((line, i) => (
-                      <p key={i} className="text-gray-600">{line}</p>
+                      <p key={i} className="text-sm sm:text-base text-gray-600">{line}</p>
                     ))}
                   </div>
                 </div>
@@ -56,7 +56,7 @@ const Contact = () => {
             ))}
           </div>
           
-          <div className="w-full h-96 mb-8 opacity-0 animate-fade-in animation-delay-600">
+          <div className="order-first lg:order-none w-full h-64 sm:h-72 md:h-96 mb-8 opacity-0 animate-fade-in animation-delay-600 lg:mb-0">
             <GoogleMap 
               latitude={27.854510666767304} 
               longitude={82.67260432691184} 
@@ -65,11 +65,11 @@ const Contact = () => {
             />
           </div>
           
-          <Card className="glass p-8 opacity-0 animate-fade-in animation-delay-700 lg:col-start-2">
-            <h2 className="text-2xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">
+          <Card className="glass p-6 sm:p-8 opacity-0 animate-fade-in animation-delay-700 lg:col-span-2 xl:col-span-1 xl:col-start-2 xl:row-start-1 xl:row-span-1">
+            <h2 className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">
               Send us a Message
             </h2>
-            <form className="space-y-6">
+            <form className="space-y-4 sm:space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <Input type="text" placeholder="Your name" className="bg-white/50" />
