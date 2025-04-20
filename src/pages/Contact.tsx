@@ -1,12 +1,36 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import GoogleMap from "@/components/GoogleMap";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    if (!name || !email || !message) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Please fill in all required fields"
+      });
+      return;
+    }
+
+    toast({
+      title: "Success",
+      description: "Message sent successfully!"
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 pt-20 sm:pt-28 md:pt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,23 +93,41 @@ const Contact = () => {
             <h2 className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">
               Send us a Message
             </h2>
-            <form className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <Input type="text" placeholder="Your name" className="bg-white/50" />
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                <Input 
+                  name="name"
+                  type="text" 
+                  placeholder="Your name" 
+                  className="bg-white/50"
+                  required
+                />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <Input type="email" placeholder="your@email.com" className="bg-white/50" />
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                <Input 
+                  name="email"
+                  type="email" 
+                  placeholder="your@email.com" 
+                  className="bg-white/50"
+                  required
+                />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <Textarea placeholder="Your message" rows={4} className="bg-white/50" />
+                <label className="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                <Textarea 
+                  name="message"
+                  placeholder="Your message" 
+                  rows={4} 
+                  className="bg-white/50"
+                  required
+                />
               </div>
               
-              <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:opacity-90 transition-opacity">
+              <Button type="submit" className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:opacity-90 transition-opacity">
                 Send Message
               </Button>
             </form>
