@@ -8,8 +8,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: ['lovableproject.com', 'raptihandmadepapers.com.np']
   },
-  base: './', // Ensure base path is set for GitHub Pages
+  base: '/', // Set base path for custom domain
   plugins: [
     react({
       // Using standard SWC options
@@ -35,4 +36,3 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-
