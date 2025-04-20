@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     allowedHosts: ['lovableproject.com', 'raptihandmadepapers.com.np']
   },
-  base: '/', // Set base path for custom domain
+  base: '/', // Keeping base path for custom domain
   plugins: [
     react({
       // Using standard SWC options
