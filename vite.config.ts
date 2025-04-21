@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     allowedHosts: ['lovableproject.com', 'raptihandmadepapers.com.np']
   },
-  base: './', // Relative base path for GitHub Pages compatibility
+  base: './', // Ensuring relative base path for GitHub Pages compatibility
   plugins: [
     react({
       // Using standard SWC options
@@ -34,5 +34,8 @@ export default defineConfig(({ mode }) => ({
         drop_debugger: true,
       },
     },
+    // Ensure we properly handle the base path in URLs
+    assetsDir: 'assets',
+    outDir: 'dist',
   },
 }));
