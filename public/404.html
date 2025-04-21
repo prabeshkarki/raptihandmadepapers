@@ -3,31 +3,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <script>
-      // Get the current path excluding the repository name if deployed to GitHub Pages
-      var path = window.location.pathname;
-      var repoName = window.location.hostname.includes('github.io') ? 
-        '/' + window.location.pathname.split('/')[1] : '';
-      
-      // If on GitHub Pages, adjust the path to exclude the repo name
-      if (repoName && path.startsWith(repoName)) {
-        path = path.substring(repoName.length);
-      }
-      
-      var hash = window.location.hash;
-      
-      // Create path to index.html with the path as a hash route
-      var redirectPath = window.location.origin + 
-        (repoName ? repoName : '') + 
-        '/#' + path.substr(1) + 
-        (hash ? hash : '');
-      
-      // Redirect to the hash route
-      window.location.href = redirectPath;
+    <title>Rapti Handmade Papers</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegmentsToKeep = 0;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
   </head>
   <body>
-    <p>Redirecting to home page...</p>
+    <h2>Redirecting to Rapti Handmade Papers...</h2>
   </body>
 </html>

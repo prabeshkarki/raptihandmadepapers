@@ -31,7 +31,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter>
+      <HashRouter basename="">
         <div className="min-h-screen flex flex-col">
           <ScrollToTop />
           <Navbar />

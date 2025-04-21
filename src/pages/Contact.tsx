@@ -11,7 +11,8 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const message = formData.get('message') as string;
@@ -25,10 +26,29 @@ const Contact = () => {
       return;
     }
 
+    // Custom success message with unique design
     toast({
-      title: "Success",
-      description: "Message sent successfully!"
+      title: null,
+      description: (
+        <div className="flex flex-col items-center gap-2 py-2">
+          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+            <Mail className="h-6 w-6 text-white animate-scale-in" />
+          </div>
+          <div className="space-y-1 text-center">
+            <h3 className="font-medium text-lg bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              Message Sent!
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Thank you for contacting us. We'll get back to you soon.
+            </p>
+          </div>
+        </div>
+      ),
+      className: "p-4 bg-white border-2 border-green-500/30",
     });
+    
+    // Reset the form fields
+    form.reset();
   };
 
   return (

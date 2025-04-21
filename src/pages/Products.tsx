@@ -31,68 +31,32 @@ const productCategories = [
     ]
   },
   {
-    id: "notebooks",
-    title: "Notebooks",
+    id: "art-paper",
+    title: "Art Paper",
     products: [
       {
         id: 4,
-        name: "Handbound Journal",
-        description: "Traditional Nepali binding with 100% lokta paper pages",
+        name: "Watercolor Paper Sheets",
+        description: "Textured lokta paper ideal for watercolor and mixed media artwork",
         image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
       },
       {
         id: 5,
-        name: "Pocket Notebook",
-        description: "Small-format notebook with durable handmade cover",
+        name: "Colored Art Paper",
+        description: "Vibrant naturally dyed sheets perfect for crafts and creative projects",
         image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
       },
       {
         id: 6,
-        name: "Artist Sketchbook",
-        description: "Thick textured pages perfect for sketching and watercolor",
-        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
-      }
-    ]
-  },
-  {
-    id: "envelopes",
-    title: "Envelopes",
-    products: [
-      {
-        id: 7,
-        name: "Decorative Envelopes",
-        description: "Hand-decorated envelopes with traditional Nepali motifs",
-        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
-      },
-      {
-        id: 8,
-        name: "Business Envelopes",
-        description: "Professional-grade handmade envelopes for business correspondence",
-        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
-      }
-    ]
-  },
-  {
-    id: "gift-wrap",
-    title: "Gift Wrap",
-    products: [
-      {
-        id: 9,
-        name: "Printed Gift Paper",
-        description: "Handprinted wrapping paper with botanical designs",
-        image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
-      },
-      {
-        id: 10,
-        name: "Luxury Gift Bags",
-        description: "Handcrafted paper gift bags with cotton handles",
+        name: "Printmaking Paper",
+        description: "Thick textured paper ideal for block printing and linocuts",
         image: "/lovable-uploads/e394db73-5823-4cc4-ad1d-000b7b9739eb.png"
       }
     ]
   },
   {
     id: "custom",
-    title: "Custom",
+    title: "Custom Orders",
     products: [
       {
         id: 11,
