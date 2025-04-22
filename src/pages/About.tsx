@@ -1,10 +1,10 @@
 
-import HeroSection from "./about/HeroSection";
-import FeaturedMediaSection from "./about/FeaturedMediaSection";
-import ProcessSection from "./about/ProcessSection";
-import HandcraftedKagajSection from "./about/HandcraftedKagajSection";
-import TeamSection from "./about/TeamSection";
-import CommitmentSection from "./about/CommitmentSection";
+import HeroSection from "./about/sections/HeroSection";
+import FeaturedMediaSection from "./about/sections/FeaturedMediaSection";
+import ProcessSection from "./about/sections/ProcessSection";
+import HandcraftedKagajSection from "./about/sections/HandcraftedKagajSection";
+import TeamSection from "./about/sections/TeamSection";
+import CommitmentSection from "./about/sections/CommitmentSection";
 
 const About = () => {
   return (
