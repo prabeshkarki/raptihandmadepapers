@@ -1,4 +1,3 @@
-
 import { Clock, Users, Rocket, Leaf, Award, Globe } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -166,21 +165,21 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
             {[
               {
-                name: "Pema Sherpa",
+                name: "Kajol Karki",
                 role: "Founder & Creative Director",
-                bio: "With 15 years of experience in traditional Nepali craftsmanship, Pema leads our creative vision and preserves authentic techniques.",
+                bio: "Blending traditional Nepali kagaj craft with modern design. Passionate about sustainability, rural artisanship, and sharing Nepal's heritage globally.",
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&h=400&auto=format&fit=crop"
               },
               {
-                name: "Rajesh Tamang",
+                name: "Lal Bahadur GC",
                 role: "Head of Production",
-                bio: "A master craftsman from a family of paper makers, Rajesh oversees our production ensuring the highest quality standards.",
+                bio: "Leading the crafting of traditional Nepali kagaj with a focus on quality, sustainability, and artisan heritage.",
                 image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&h=400&auto=format&fit=crop"
               },
               {
-                name: "Amrita Rai",
-                role: "Sustainability Officer",
-                bio: "Passionate about environmental conservation, Amrita ensures our processes remain eco-friendly and sustainable.",
+                name: "Damar Bahadur GC",
+                role: "Marketing Officer",
+                bio: "Focused on elevating the brand and expanding the reach of Nepali kagaj through creative strategies and meaningful engagement.",
                 image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&h=400&auto=format&fit=crop"
               }
             ].map((member, index) => (
@@ -202,6 +201,43 @@ const About = () => {
                 <p className="text-gray-600 text-sm sm:text-base">{member.bio}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Our Commitment Section */}
+      <div className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-gray-100 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-10 sm:mb-16">
+              Our Commitment
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              <div className="p-6 rounded-2xl glass opacity-0 animate-fade-in hover:shadow-lg transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  Sustainability
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  We are dedicated to eco-friendly practices, ensuring our papermaking process has minimal environmental impact.
+                </p>
+              </div>
+              <div className="p-6 rounded-2xl glass opacity-0 animate-fade-in hover:shadow-lg transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  Community
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  We support local artisans and communities, preserving traditional skills and providing sustainable livelihoods.
+                </p>
+              </div>
+              <div className="p-6 rounded-2xl glass opacity-0 animate-fade-in hover:shadow-lg transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  Quality
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  We maintain the highest standards of quality, ensuring our handmade paper products are durable, beautiful, and unique.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
