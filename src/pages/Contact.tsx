@@ -69,16 +69,19 @@ const Contact = () => {
             {[
               {
                 icon: MapPin,
+                topic: "Visit Us",
                 title: "VM3F+R29, Sisahaniya 22400",
                 content: []
               },
               {
                 icon: Phone,
+                topic: "Call Us",
                 title: "9840768211",
                 content: []
               },
               {
                 icon: Mail,
+                topic: "Email Us",
                 title: "lbgc9005@gmail.com",
                 content: []
               }
@@ -89,6 +92,7 @@ const Contact = () => {
                     <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
                   </div>
                   <div className="ml-4">
+                    <h4 className="text-sm font-medium text-green-600 mb-1">{item.topic}</h4>
                     <h3 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                       {item.title}
                     </h3>
@@ -101,7 +105,7 @@ const Contact = () => {
             ))}
           </div>
           
-          <div className="order-first lg:order-none w-full h-64 sm:h-72 md:h-96 mb-8 opacity-0 animate-fade-in animation-delay-600 lg:mb-0">
+          <div className="mx-auto w-full max-w-2xl lg:max-w-none h-64 sm:h-72 md:h-96 mb-8 opacity-0 animate-fade-in animation-delay-600 lg:mb-0">
             <GoogleMap 
               latitude={27.854510666767304} 
               longitude={82.67260432691184} 
