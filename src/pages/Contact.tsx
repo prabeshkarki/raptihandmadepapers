@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -68,18 +69,18 @@ const Contact = () => {
             {[
               {
                 icon: MapPin,
-                title: "Visit Us",
-                content: ["123 Paper Mill Road", "Industrial District", "Production City"]
+                title: "VM3F+R29, Sisahaniya 22400",
+                content: []
               },
               {
                 icon: Phone,
-                title: "Call Us",
-                content: ["+1 (555) 123-4567"]
+                title: "9840768211",
+                content: []
               },
               {
                 icon: Mail,
-                title: "Email Us",
-                content: ["contact@papercraft.com"]
+                title: "lbgc9005@gmail.com",
+                content: []
               }
             ].map((item, index) => (
               <Card key={item.title} className="glass p-4 sm:p-6 hover:shadow-lg transition-all duration-300">
