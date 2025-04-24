@@ -1,3 +1,4 @@
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -11,8 +12,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <p className="text-gray-400 text-sm sm:text-base">Rapti Paper & Hand Craft</p>
-            <p className="text-gray-400 text-sm sm:text-base">Rapti District, Nepal</p>
-            <p className="text-gray-400 text-sm sm:text-base">contact@raptihandmadepapers.com.np</p>
+            <p className="text-gray-400 text-sm sm:text-base">VM3F+R29, Sisahaniya 22400</p>
+            <p className="text-gray-400 text-sm sm:text-base">lbgc9005@gmail.com</p>
+            <p className="text-gray-400 text-sm sm:text-base">+977 9840768211</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Hours</h3>
