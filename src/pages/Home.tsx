@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, Leaf, Recycle, Users, MapPin } from "lucide-react";
@@ -17,7 +16,7 @@ const Home = () => {
       <div 
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/lovable-uploads/7cc5af10-422d-49d8-91d0-7c1bc92ddf4c.png')` 
+          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/lovable-uploads/b6125732-0585-4f52-8fdc-d32ebc9a4e42.png')` 
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-green-50/30 to-blue-50/30 backdrop-blur-sm" />
